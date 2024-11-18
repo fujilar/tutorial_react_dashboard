@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import WelcomeMessage from './WelcomeMessage';
 import './App.css';
+import AppLayout from './AppLayout';
+import AppBar from './AppBar';
+import {AppProvider}  from './AppProvider';
+import Settings from '../Settings';
+import Content from '../Shared/Content';
 
-import styled, {css} from 'styled-components';
+// import styled, {css} from 'styled-components';
 
-const MyButton = styled.div`
-  color: green;
-  ${props => props.primary && css`
-    color: palevioletred;
-  `}
-`;
+// const MyButton = styled.div`
+//   color: green;
+//   ${props => props.primary && css`
+//     color: palevioletred;
+//   `}
+// `;
 
-const TomatoButton = styled(MyButton)`
-  color: tomato;
-  border-color: tomato;
-`;
+// const TomatoButton = styled(MyButton)`
+//   color: tomato;
+//   border-color: tomato;
+// `;
 
 // const Button = styled.button`
 //   background-color: ${props => props.primary ? 'blue' : 'gray'};
@@ -32,14 +36,16 @@ const TomatoButton = styled(MyButton)`
 class App extends Component {
   render() {
     return (
-    <div>
-      <WelcomeMessage/>
-      <MyButton>Click me!</MyButton>
-      <MyButton primary>Click me!</MyButton>
-      <TomatoButton>Click me!</TomatoButton>
-      {/* <Button primary>Primary</Button>
-      <Button>Secondary</Button> */}
-    </div>
+    <AppLayout> 
+      <AppProvider>
+        <AppBar/>
+        <Content>
+          <Settings/>
+        </Content>
+      </AppProvider>
+    </AppLayout>
+
+
     );
   }
 }
