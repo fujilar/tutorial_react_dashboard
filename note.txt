@@ -1,0 +1,3 @@
+ctrl p in sources to search file
+
+can break break point point click on the line and refresh, can see the data pass in 
